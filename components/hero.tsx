@@ -5,7 +5,7 @@ import { colors } from '@/lib/colors'
 // Full-bleed editorial hero. Background is a stock "mood" cake shot (easy to
 // swap — just change HERO_IMAGE); every photo below the hero is the real bakery.
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1677840147138-72161ef2b6f5?q=80&w=2400&auto=format&fit=crop'
+  'https://images.unsplash.com/photo-1780337092369-eefebe4facfd?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 
 export function Hero() {
   const scrollToSection = (href: string) => {
@@ -14,7 +14,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden" style={{ paddingTop: '120px' }}>
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"

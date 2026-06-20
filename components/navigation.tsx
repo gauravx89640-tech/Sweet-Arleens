@@ -30,12 +30,17 @@ export function Navigation() {
     element?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  // Solid (cream) state when scrolled or when the mobile menu is open;
+  // otherwise transparent so the hero shows through.
+  const solid = scrolled || isOpen
+  const linkColor = solid ? colors.foreground : colors.backgroundCard
+
   return (
     <nav
-      className="sticky top-0 z-40 w-full transition-shadow duration-300"
+      className="w-full transition-all duration-300"
       style={{
-        backgroundColor: colors.background,
-        borderBottomColor: `${colors.backgroundTaupe}4d`,
+        backgroundColor: solid ? colors.background : 'transparent',
+        borderBottomColor: solid ? `${colors.backgroundTaupe}4d` : 'transparent',
         borderBottomWidth: '1px',
         boxShadow: scrolled ? `0 6px 24px -12px ${colors.foreground}59` : 'none',
       }}
@@ -48,7 +53,15 @@ export function Navigation() {
             className="transition-opacity hover:opacity-75"
             aria-label="Sweet Arleen's — home"
           >
-            <img src="/logo.png" alt="Sweet Arleen's" style={{ height: '72px', width: 'auto' }} />
+            <img
+              src="/logo.png"
+              alt="Sweet Arleen's"
+              style={{
+                height: '72px',
+                width: 'auto',
+                filter: solid ? 'none' : 'drop-shadow(0 2px 8px rgba(0,0,0,0.5))',
+              }}
+            />
           </button>
 
           {/* Desktop Nav */}
@@ -58,12 +71,12 @@ export function Navigation() {
                 key={link.label}
                 onClick={() => scrollToSection(link.href)}
                 className="nav-link font-body text-sm font-medium tracking-wide transition-colors"
-                style={{ color: colors.foreground }}
+                style={{ color: linkColor }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.color = colors.accentGold
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = colors.foreground
+                  e.currentTarget.style.color = linkColor
                 }}
               >
                 {link.label}
@@ -75,7 +88,7 @@ export function Navigation() {
           <button
             onClick={() => scrollToSection('#visit')}
             className="hidden rounded-full px-6 py-2 font-body text-xs font-bold uppercase tracking-wider transition-all hover:scale-105 md:inline-block"
-            style={{ backgroundColor: colors.accentGold, color: colors.background }}
+            style={{ backgroundColor: colors.accentGold, color: colors.backgroundCard }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = colors.accentGoldDark
             }}
@@ -89,7 +102,7 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            style={{ color: colors.accentGold }}
+            style={{ color: solid ? colors.accentGold : colors.backgroundCard }}
             className="md:hidden"
             aria-label="Toggle menu"
           >
@@ -106,12 +119,6 @@ export function Navigation() {
                 onClick={() => scrollToSection(link.href)}
                 className="block w-full py-2 text-left font-body text-sm font-medium transition-colors"
                 style={{ color: colors.foreground }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = colors.accentGold
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = colors.foreground
-                }}
               >
                 {link.label}
               </button>
@@ -119,13 +126,7 @@ export function Navigation() {
             <button
               onClick={() => scrollToSection('#visit')}
               className="mt-4 w-full rounded-full px-4 py-2.5 font-body text-xs font-bold uppercase tracking-wider transition-all"
-              style={{ backgroundColor: colors.accentGold, color: colors.background }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = colors.accentGoldDark
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = colors.accentGold
-              }}
+              style={{ backgroundColor: colors.accentGold, color: colors.backgroundCard }}
             >
               Order a Cake
             </button>

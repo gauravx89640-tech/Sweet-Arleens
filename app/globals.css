@@ -17,6 +17,11 @@
   }
 }
 
+/* Offset anchor scrolling for the fixed header so sections aren't hidden under it */
+section[id] {
+  scroll-margin-top: 130px;
+}
+
 /* Fancier nav links: a rose underline that wipes in from the centre on hover */
 .nav-link {
   position: relative;

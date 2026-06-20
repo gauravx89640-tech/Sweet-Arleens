@@ -22,13 +22,13 @@ export function Flavors() {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1660868984987-28c21c569e7c?q=80&w=2070&auto=format&fit=crop')",
+            "url('https://images.unsplash.com/photo-1563076429-c04cbe68da3a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         }}
       />
       {/* Dark overlay for legibility */}
       <div
         className="absolute inset-0"
-        style={{ background: `linear-gradient(${colors.foreground}d9, ${colors.backgroundTaupe}e6)` }}
+        style={{ background: `linear-gradient(${colors.foreground}a8, ${colors.backgroundTaupe}bf)` }}
       />
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

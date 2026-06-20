@@ -14,8 +14,10 @@ export default function Home() {
   return (
     <main className="w-full bg-background">
       <ScrollReveal />
-      <AnnouncementBar />
-      <Navigation />
+      <header className="fixed left-0 right-0 top-0 z-50">
+        <AnnouncementBar />
+        <Navigation />
+      </header>
       <Hero />
       <TrustStrip />
       <Craft />
