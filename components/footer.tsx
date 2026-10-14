@@ -79,6 +79,18 @@ export function Footer() {
           <p className="font-body text-xs" style={{ color: `${colors.backgroundCard}99` }}>
             © 2026 Tayt&apos;s Cakes · Wichita, KS
           </p>
+          <p className="font-body text-xs" style={{ color: `${colors.backgroundCard}99` }}>
+            Designed by{' '}
+            <a
+              href="https://forgestudio.one"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold transition-colors"
+              style={{ color: colors.accentGold }}
+            >
+              Forge Studio
+            </a>
+          </p>
         </div>
       </div>
     </footer>
