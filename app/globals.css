@@ -139,3 +139,18 @@ section[id] {
     animation: shimmer 2.5s ease-in-out infinite;
   }
 }
+
+/* Marquee — continuous horizontal scroll */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .marquee-track {
+    animation: marquee-scroll 30s linear infinite;
+    width: max-content;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+}

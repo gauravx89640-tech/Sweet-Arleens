@@ -1,5 +1,6 @@
 import { colors } from '@/lib/colors'
 import { ArrowRightIcon } from '@/components/social-icons'
+import { CakeIllustration, CupcakeIllustration } from '@/components/illustrations'
 
 export function Craft() {
   const products = [
@@ -37,7 +38,14 @@ export function Craft() {
     <section id="craft" className="w-full py-20 sm:py-28" style={{ backgroundColor: colors.background }}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="reveal-item mb-16 text-center">
+        <div className="reveal-item relative mb-16 text-center">
+          {/* Decorative drawings */}
+          <div className="float-anim absolute -left-2 top-0 opacity-20 hidden lg:block">
+            <CakeIllustration size={64} color={colors.accentGold} />
+          </div>
+          <div className="float-anim absolute -right-2 top-0 opacity-20 hidden lg:block" style={{ animationDelay: '1.5s' }}>
+            <CupcakeIllustration size={64} color={colors.accentGold} />
+          </div>
           <p className="font-body text-xs font-bold uppercase tracking-widest mb-3" style={{ color: colors.accentGold }}>
             Our Craft
           </p>

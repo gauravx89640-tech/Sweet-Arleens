@@ -1,4 +1,5 @@
 import { colors } from '@/lib/colors'
+import { WhiskIllustration, RollingPinIllustration, HeartIllustration } from '@/components/illustrations'
 
 export function Story() {
   return (
@@ -39,7 +40,11 @@ export function Story() {
           </div>
 
           {/* Narrative */}
-          <div className="reveal-item">
+          <div className="reveal-item relative">
+            {/* Decorative whisk */}
+            <div className="float-anim absolute -top-6 -right-4 opacity-30 hidden sm:block">
+              <WhiskIllustration size={56} color={colors.accentGold} />
+            </div>
             <p className="font-body text-xs font-bold uppercase tracking-widest mb-4" style={{ color: colors.accentGold }}>
               Meet the Maker
             </p>
@@ -59,7 +64,8 @@ export function Story() {
             </p>
 
             {/* Signature */}
-            <div className="border-t pt-5" style={{ borderColor: `${colors.accentGold}40` }}>
+            <div className="flex items-center gap-3 border-t pt-5" style={{ borderColor: `${colors.accentGold}40` } }>
+              <HeartIllustration size={28} color={colors.accentGold} />
               <p className="font-heading text-2xl italic" style={{ color: colors.foreground }}>
                 Taytlyn Greasham
               </p>

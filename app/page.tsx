@@ -1,11 +1,14 @@
 import { AnnouncementBar } from '@/components/announcement-bar'
 import { Navigation } from '@/components/navigation'
 import { Hero } from '@/components/hero'
+import { Marquee } from '@/components/marquee'
 import { TrustStrip } from '@/components/trust-strip'
 import { Craft } from '@/components/craft'
 import { Flavors } from '@/components/flavors'
 import { Story } from '@/components/story'
 import { Gallery } from '@/components/gallery'
+import { HowToOrder } from '@/components/how-to-order'
+import { Testimonials } from '@/components/testimonials'
 import { Visit } from '@/components/visit'
 import { Footer } from '@/components/footer'
 import { ScrollReveal } from '@/components/scroll-reveal'
@@ -19,11 +22,14 @@ export default function Home() {
         <Navigation />
       </header>
       <Hero />
+      <Marquee />
       <TrustStrip />
       <Craft />
       <Flavors />
+      <HowToOrder />
       <Story />
       <Gallery />
+      <Testimonials />
       <Visit />
       <Footer />
     </main>
