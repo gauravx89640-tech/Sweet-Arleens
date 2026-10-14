@@ -1,7 +1,9 @@
 'use client'
 
+import { useState } from 'react'
 import { colors } from '@/lib/colors'
 import { FacebookIcon, ArrowRightIcon } from '@/components/social-icons'
+import { supabase } from '@/lib/supabase-client'
 
 export function Visit() {
   return (
@@ -108,20 +110,9 @@ export function Visit() {
             </div>
           </div>
 
-          {/* Right Column - Baking photo & details */}
+          {/* Right Column - Order Form & Map */}
           <div className="reveal-item">
-            {/* Baking photo — large */}
-            <div className="overflow-hidden rounded-3xl transition-all duration-500 hover:shadow-2xl">
-              <img
-                src="https://images.pexels.com/photos/6223181/pexels-photo-6223181.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-                alt="Baker rolling dough in a rustic kitchen"
-                className="w-full object-cover"
-                style={{ height: '440px' }}
-              />
-            </div>
-            <p className="mt-3 px-1 font-body text-xs italic" style={{ color: `${colors.backgroundCard}cc` }}>
-              Every order is baked fresh from scratch in our home kitchen
-            </p>
+            <OrderForm />
 
             {/* Service area map */}
             <div className="mt-8 overflow-hidden rounded-3xl">
@@ -150,5 +141,247 @@ export function Visit() {
         </div>
       </div>
     </section>
+  )
+}
+
+const cakeTypes = [
+  'Custom Cake',
+  'Cupcakes',
+  'Cookies & Cake Pops',
+  'Pies & Cheesecakes',
+  'Other / Not Sure Yet',
+]
+
+function OrderForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    cake_type: '',
+    serving_count: '',
+    needed_date: '',
+    message: '',
+  })
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [errors, setErrors] = useState<Record<string, string>>({})
+
+  const update = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }))
+    if (errors[field]) {
+      setErrors((prev) => {
+        const next = { ...prev }
+        delete next[field]
+        return next
+      })
+    }
+  }
+
+  const validate = () => {
+    const e: Record<string, string> = {}
+    if (!formData.name.trim()) e.name = 'Please enter your name'
+    if (!formData.email.trim()) e.email = 'Please enter your email'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) e.email = 'Please enter a valid email'
+    if (!formData.message.trim()) e.message = 'Please tell us about your order'
+    return e
+  }
+
+  const handleSubmit = async (ev: React.FormEvent) => {
+    ev.preventDefault()
+    const e = validate()
+    if (Object.keys(e).length > 0) {
+      setErrors(e)
+      return
+    }
+
+    setStatus('submitting')
+    try {
+      const { error } = await supabase.from('order_inquiries').insert({
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim() || null,
+        cake_type: formData.cake_type || null,
+        serving_count: formData.serving_count.trim() || null,
+        needed_date: formData.needed_date || null,
+        message: formData.message.trim(),
+      })
+
+      if (error) throw error
+
+      setStatus('success')
+      setFormData({ name: '', email: '', phone: '', cake_type: '', serving_count: '', needed_date: '', message: '' })
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  if (status === 'success') {
+    return (
+      <div
+        className="rounded-3xl p-10 text-center"
+        style={{ backgroundColor: colors.background, color: colors.foreground }}
+      >
+        <div className="mb-4 text-4xl" style={{ color: colors.accentGold }}>
+          &#10003;
+        </div>
+        <h3 className="font-heading text-2xl font-bold mb-3">Thank You!</h3>
+        <p className="font-body text-base leading-relaxed mb-6" style={{ color: `${colors.foreground}cc` }}>
+          Your order inquiry has been sent. Taytlyn will get back to you soon — usually within 1–2 business days.
+        </p>
+        <button
+          onClick={() => setStatus('idle')}
+          className="rounded-full px-6 py-2.5 font-body text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:scale-105"
+          style={{ backgroundColor: colors.accentGold, color: colors.background }}
+        >
+          Submit Another Request
+        </button>
+      </div>
+    )
+  }
+
+  const inputClass = 'w-full rounded-xl px-4 py-3 font-body text-sm outline-none transition-all duration-200 focus:ring-2'
+  const inputStyle = {
+    backgroundColor: colors.background,
+    border: `1.5px solid ${colors.foreground}22`,
+    color: colors.foreground,
+  }
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className="rounded-3xl p-6 sm:p-8"
+      style={{ backgroundColor: colors.background, color: colors.foreground }}
+    >
+      <h3 className="font-heading text-2xl font-bold mb-2">Request Your Order</h3>
+      <p className="font-body text-sm mb-6" style={{ color: `${colors.foreground}99` }}>
+        Fill this out and we&apos;ll get back to you with a quote and availability.
+      </p>
+
+      {/* Name & Email row */}
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label className="mb-1.5 block font-body text-xs font-bold uppercase tracking-wider" style={{ color: `${colors.foreground}b3` }}>
+            Name *
+          </label>
+          <input
+            type="text"
+            value={formData.name}
+            onChange={(e) => update('name', e.target.value)}
+            className={inputClass}
+            style={{ ...inputStyle, borderColor: errors.name ? colors.accentGold : undefined }}
+            placeholder="Jane Doe"
+          />
+          {errors.name && <p className="mt-1 font-body text-xs" style={{ color: colors.accentGold }}>{errors.name}</p>}
+        </div>
+        <div>
+          <label className="mb-1.5 block font-body text-xs font-bold uppercase tracking-wider" style={{ color: `${colors.foreground}b3` }}>
+            Email *
+          </label>
+          <input
+            type="email"
+            value={formData.email}
+            onChange={(e) => update('email', e.target.value)}
+            className={inputClass}
+            style={{ ...inputStyle, borderColor: errors.email ? colors.accentGold : undefined }}
+            placeholder="jane@email.com"
+          />
+          {errors.email && <p className="mt-1 font-body text-xs" style={{ color: colors.accentGold }}>{errors.email}</p>}
+        </div>
+      </div>
+
+      {/* Phone & Date row */}
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        <div>
+          <label className="mb-1.5 block font-body text-xs font-bold uppercase tracking-wider" style={{ color: `${colors.foreground}b3` }}>
+            Phone
+          </label>
+          <input
+            type="tel"
+            value={formData.phone}
+            onChange={(e) => update('phone', e.target.value)}
+            className={inputClass}
+            style={inputStyle}
+            placeholder="(316) 555-0123"
+          />
+        </div>
+        <div>
+          <label className="mb-1.5 block font-body text-xs font-bold uppercase tracking-wider" style={{ color: `${colors.foreground}b3` }}>
+            Date Needed
+          </label>
+          <input
+            type="date"
+            value={formData.needed_date}
+            onChange={(e) => update('needed_date', e.target.value)}
+            className={inputClass}
+            style={inputStyle}
+          />
+        </div>
+      </div>
+
+      {/* Cake Type & Servings row */}
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        <div>
+          <label className="mb-1.5 block font-body text-xs font-bold uppercase tracking-wider" style={{ color: `${colors.foreground}b3` }}>
+            What Can We Make?
+          </label>
+          <select
+            value={formData.cake_type}
+            onChange={(e) => update('cake_type', e.target.value)}
+            className={inputClass}
+            style={inputStyle}
+          >
+            <option value="">Select a treat...</option>
+            {cakeTypes.map((t) => (
+              <option key={t} value={t}>{t}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className="mb-1.5 block font-body text-xs font-bold uppercase tracking-wider" style={{ color: `${colors.foreground}b3` }}>
+            How Many Servings?
+          </label>
+          <input
+            type="text"
+            value={formData.serving_count}
+            onChange={(e) => update('serving_count', e.target.value)}
+            className={inputClass}
+            style={inputStyle}
+            placeholder="e.g. 20 people"
+          />
+        </div>
+      </div>
+
+      {/* Message */}
+      <div className="mt-4">
+        <label className="mb-1.5 block font-body text-xs font-bold uppercase tracking-wider" style={{ color: `${colors.foreground}b3` }}>
+          Tell Us About Your Order *
+        </label>
+        <textarea
+          rows={4}
+          value={formData.message}
+          onChange={(e) => update('message', e.target.value)}
+          className={inputClass + ' resize-none'}
+          style={{ ...inputStyle, borderColor: errors.message ? colors.accentGold : undefined }}
+          placeholder="Theme, colors, flavors, occasion, any special requests..."
+        />
+        {errors.message && <p className="mt-1 font-body text-xs" style={{ color: colors.accentGold }}>{errors.message}</p>}
+      </div>
+
+      {/* Error message */}
+      {status === 'error' && (
+        <p className="mt-4 rounded-lg px-4 py-3 font-body text-sm" style={{ backgroundColor: `${colors.accentGold}15`, color: colors.accentGold }}>
+          Something went wrong sending your request. Please try again or call us at (316) 300-1171.
+        </p>
+      )}
+
+      {/* Submit */}
+      <button
+        type="submit"
+        disabled={status === 'submitting'}
+        className="mt-6 w-full rounded-full px-6 py-3.5 font-body text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] hover:shadow-lg active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed"
+        style={{ backgroundColor: colors.accentGold, color: colors.background }}
+      >
+        {status === 'submitting' ? 'Sending...' : 'Submit Order Request'}
+      </button>
+    </form>
   )
 }

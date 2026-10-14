@@ -9,6 +9,7 @@ import { Story } from '@/components/story'
 import { Gallery } from '@/components/gallery'
 import { HowToOrder } from '@/components/how-to-order'
 import { Testimonials } from '@/components/testimonials'
+import { FAQ } from '@/components/faq'
 import { Visit } from '@/components/visit'
 import { Footer } from '@/components/footer'
 import { ScrollReveal } from '@/components/scroll-reveal'
@@ -30,6 +31,7 @@ export default function Home() {
       <Story />
       <Gallery />
       <Testimonials />
+      <FAQ />
       <Visit />
       <Footer />
     </main>
