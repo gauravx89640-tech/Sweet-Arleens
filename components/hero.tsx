@@ -2,9 +2,7 @@
 
 import { colors } from '@/lib/colors'
 
-// Pexels hero image — elegant celebration cake
-const HERO_IMAGE =
-  'https://images.pexels.com/photos/32191353/pexels-photo-32191353.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop'
+const HERO_IMAGE = '/hero-cake.jpg'
 
 export function Hero() {
   const scrollToSection = (href: string) => {

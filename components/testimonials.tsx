@@ -4,19 +4,24 @@ import { HeartIllustration } from '@/components/illustrations'
 export function Testimonials() {
   const testimonials = [
     {
-      quote: 'The cake was absolutely beautiful AND delicious! Taytlyn brought my vision to life perfectly for my daughter\'s birthday.',
-      author: 'Sarah M.',
-      occasion: 'Birthday Cake',
-    },
-    {
-      quote: 'Best cupcakes in Wichita, hands down. You can taste the love and quality in every bite. Will definitely order again!',
-      author: 'Jennifer R.',
+      quote: 'The best tasting cakes and frosting by the sweetest soul you\'ll ever meet. So so creative. These are cupcakes she made and delivered for my grand babies birthday.',
+      author: 'Bella Boldoni',
       occasion: 'Cupcakes',
     },
     {
-      quote: 'Ordered a surprise reveal cake for my sister\'s baby shower — everyone was blown away. The detail was incredible!',
-      author: 'Ashley K.',
-      occasion: 'Reveal Cake',
+      quote: 'I called from Montana and asked for a custom cake I needed in three days time. She started researching that evening and personally delivered the cake. I couldn\'t be more impressed with the service. The cake itself was so delicious! Not only beautiful, but absolutely yummy. "Best cake ever" from birthday boy, everyone who had some agreed it was a perfect cake. I couldn\'t be happier. Will definitely be ordering again and highly recommend them!',
+      author: 'Amy Torres',
+      occasion: 'Custom Cake',
+    },
+    {
+      quote: 'Tayts cakes has the most beautiful designs and the most amazing flavor! So much time and talent goes into them. I couldn\'t have asked for a better cake for my wedding, I will be coming back every year for our daughter\'s birthdays! Best cakes in Wichita!',
+      author: 'Carolyn Koefod',
+      occasion: 'Wedding Cake',
+    },
+    {
+      quote: 'She made cupcakes for my daughters first birthday party, they were super yummy! Would definitely order from her again! The colors were perfect for her pastel Halloween theme!',
+      author: 'Nichole Van',
+      occasion: 'Cupcakes',
     },
   ]
 
@@ -35,7 +40,7 @@ export function Testimonials() {
         </div>
 
         {/* Testimonial cards */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {testimonials.map((t) => (
             <div
               key={t.author}

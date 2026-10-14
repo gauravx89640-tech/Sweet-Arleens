@@ -6,28 +6,28 @@ export function Craft() {
   const products = [
     {
       title: 'Custom Cakes',
-      image: 'https://images.pexels.com/photos/32370565/pexels-photo-32370565.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/gallery/cakes-1.jpg',
       pos: 'center' as const,
       description:
         'Themed birthday cakes, surprise reveal cakes, Tres Leches, cinnamon roll cakes — designed around your celebration.',
     },
     {
       title: 'Cupcakes',
-      image: 'https://images.pexels.com/photos/853006/pexels-photo-853006.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/gallery/cupcakes-1.jpg',
       pos: 'center' as const,
       description:
         'Moist, scratch-made cupcakes with silky buttercream. Perfect for parties, showers, or just because.',
     },
     {
       title: 'Cookies & Cake Pops',
-      image: 'https://images.pexels.com/photos/10171574/pexels-photo-10171574.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/gallery/cookies-1.jpg',
       pos: 'center' as const,
       description:
         'Decorated sugar cookies, cookie packs, and colorful cake pops for any occasion.',
     },
     {
       title: 'Pies & Cheesecakes',
-      image: 'https://images.pexels.com/photos/38495630/pexels-photo-38495630.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/gallery/pies-1.jpg',
       pos: 'center' as const,
       description:
         'Homemade pies and specialty cheesecakes — rich, creamy, and baked fresh to order.',

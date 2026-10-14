@@ -22,7 +22,7 @@ export function Story() {
           <div className="reveal-item relative mx-auto w-full max-w-md">
             <div className="overflow-hidden rounded-3xl transition-all duration-500 hover:shadow-2xl" style={{ border: `4px solid ${colors.accentGold}` }}>
               <img
-                src="https://scontent.fbho3-3.fna.fbcdn.net/v/t39.30808-6/508816862_3500167523455696_3970120062036556752_n.jpg?stp=dst-jpg_tt6&cstp=mx1179x1180&ctp=s1179x1180&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=x-flLi_T5QAQ7kNvwHpaTrn&_nc_oc=AdobHaN1kJTgB3nepQVDOjk1hkF825oDpgdv3eV9obyiZFOs0AJegbrWXnT3FWdFXDZJr_YYxGLbfJ0248Wa668N&_nc_zt=23&_nc_ht=scontent.fbho3-3.fna&_nc_gid=hcl9tf1r0lXq8pSDaHlhYA&_nc_ss=7b2a8&oh=00_AQNF1i0wky1lwxM4HyJx9uESe0upUHeCtdnCTb7Cbt0POw&oe=6AD4F188"
+                src="/gallery/portrait.jpg"
                 alt="Taytlyn Greasham, owner and baker at Tayt's Cakes"
                 className="w-full object-cover"
                 style={{ aspectRatio: '4 / 5', objectPosition: '50% 20%' }}
