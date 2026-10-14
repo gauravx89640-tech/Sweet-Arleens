@@ -5,29 +5,29 @@ export function Craft() {
   const products = [
     {
       title: 'Custom Cakes',
-      image: 'https://scontent.fbho3-3.fna.fbcdn.net/v/t39.30808-6/470683001_905372728388564_874552493969151533_n.jpg?stp=dst-jpg_tt6&cstp=mx2034x2048&ctp=s2034x2048&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=K5CAem5lo74Q7kNvwEdtKJU&_nc_oc=Adrf4Fpa4SQj_xyMQ3nI8dnGR24Wq1XSYyUz6AtIgs52IxdiYH-SYl_o8s1FOdfv1aSTyZbgf050zzn9uX_LzygL&_nc_zt=23&_nc_ht=scontent.fbho3-3.fna&_nc_gid=w347lFIvM6VI9cvkx519NQ&_nc_ss=7b2a8&oh=00_AQOyYEDhIOuuiQFPa9o9KotB_bpYeI4X8sJCUYCciXhFEQ&oe=6AD4B697',
-      pos: 'center 40%',
+      image: 'https://images.pexels.com/photos/32370565/pexels-photo-32370565.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      pos: 'center' as const,
       description:
         'Themed birthday cakes, surprise reveal cakes, Tres Leches, cinnamon roll cakes — designed around your celebration.',
     },
     {
       title: 'Cupcakes',
-      image: 'https://scontent.fbho3-4.fna.fbcdn.net/v/t39.30808-6/470780243_905372785055225_834949861267358704_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2044&ctp=s552x414&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=50ad20&_nc_ohc=3bXCaMEA9RAQ7kNvwHoehwL&_nc_oc=AdotbeJIKmJ68bRxlUXS9ntTkZ6Ehy-wbu8RkhR5sCJzhGkscjfjTk15xNgiVc50p4SJTXwou-AH4u2mUU-KLVEg&_nc_zt=23&_nc_ht=scontent.fbho3-4.fna&_nc_gid=WO_4yf_AarPH_y1ziBfE9g&_nc_ss=7b2a8&oh=00_AQOqNOeOM7-18xHL43c_-s5913mqqye_T6Gbor-GBYC7tQ&oe=6AD4C7CE',
-      pos: 'center',
+      image: 'https://images.pexels.com/photos/853006/pexels-photo-853006.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      pos: 'center' as const,
       description:
         'Moist, scratch-made cupcakes with silky buttercream. Perfect for parties, showers, or just because.',
     },
     {
       title: 'Cookies & Cake Pops',
-      image: 'https://scontent.fbho3-2.fna.fbcdn.net/v/t39.30808-6/470780149_905372838388553_8789886899881712313_n.jpg?stp=c343.0.1362.1362a_dst-jpg_tt6&cstp=mx1362x1362&ctp=s552x414&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=50ad20&_nc_ohc=dTxPj21Mc8UQ7kNvwH3qwmd&_nc_oc=AdrqkgA7z6192jBmXjYtCLm8Rx1JQ6qfh7J47ZbQ_TfROlxdCB_ydA0oi52_MWZ6Rao2FX4ORH2iBZUj9xlmSkO9&_nc_zt=23&_nc_ht=scontent.fbho3-2.fna&_nc_gid=tVKKLMYRfkazBfQxw2PLog&_nc_ss=7b2a8&oh=00_AQM4IR9oV6wn-Vyhl6w1hrJ_lx5JS-lStddq4QBuvRRSsg&oe=6AD4CFEB',
-      pos: 'center',
+      image: 'https://images.pexels.com/photos/10171574/pexels-photo-10171574.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      pos: 'center' as const,
       description:
-        'Decorated sugar cookies, cookie packs (8 for $10), and colorful cake pops for any occasion.',
+        'Decorated sugar cookies, cookie packs, and colorful cake pops for any occasion.',
     },
     {
       title: 'Pies & Cheesecakes',
-      image: 'https://scontent.fbho3-4.fna.fbcdn.net/v/t39.30808-6/470808298_905372901721880_1285049375229817260_n.jpg?stp=c0.247.1300.1300a_dst-jpg_tt6&cstp=mx1300x1300&ctp=s552x414&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=50ad20&_nc_ohc=uPr0WbXmGx0Q7kNvwEs7efA&_nc_oc=AdoAbFp3D5vkqBJ7iMSPbk_tjz2Nsdm7Umc8YWibcKu9B0TpRXmiEWjKxBUjT6LNkhqSCrqcUsGXuO96fdejpWiE&_nc_zt=23&_nc_ht=scontent.fbho3-4.fna&_nc_gid=piU4wGYTA5Leu-R633Qylw&_nc_ss=7b2a8&oh=00_AQO_xxb5fxvVx4EBknM_mcvOCNSv3KNu36L-32ckn0QgmA&oe=6AD4A22F',
-      pos: 'center',
+      image: 'https://images.pexels.com/photos/38495630/pexels-photo-38495630.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      pos: 'center' as const,
       description:
         'Homemade pies and specialty cheesecakes — rich, creamy, and baked fresh to order.',
     },
@@ -37,7 +37,7 @@ export function Craft() {
     <section id="craft" className="w-full py-20 sm:py-28" style={{ backgroundColor: colors.background }}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-16 text-center">
+        <div className="reveal-item mb-16 text-center">
           <p className="font-body text-xs font-bold uppercase tracking-widest mb-3" style={{ color: colors.accentGold }}>
             Our Craft
           </p>
@@ -52,7 +52,7 @@ export function Craft() {
           {products.map((product) => (
             <div
               key={product.title}
-              className="group flex flex-col overflow-hidden rounded-2xl sm:rounded-3xl transition-all duration-300 hover:shadow-xl"
+              className="reveal-item group flex flex-col overflow-hidden rounded-2xl sm:rounded-3xl transition-all duration-500 hover:shadow-xl hover:-translate-y-2"
               style={{ backgroundColor: colors.backgroundCard }}
             >
               {/* Image */}
@@ -68,7 +68,7 @@ export function Craft() {
               {/* Content */}
               <div className="flex flex-1 flex-col justify-between p-6">
                 <div>
-                  <h3 className="font-heading text-xl font-bold mb-2" style={{ color: colors.foreground }}>
+                  <h3 className="font-heading text-xl font-bold mb-2 transition-colors group-hover:text-[#C77B5C]" style={{ color: colors.foreground }}>
                     {product.title}
                   </h3>
                   <p className="font-body text-sm leading-relaxed" style={{ color: `${colors.foreground}99` }}>

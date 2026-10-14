@@ -2,8 +2,9 @@
 
 import { colors } from '@/lib/colors'
 
+// Pexels hero image — elegant celebration cake
 const HERO_IMAGE =
-  'https://scontent.fbho3-4.fna.fbcdn.net/v/t39.30808-6/470780243_905372785055225_834949861267358704_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2044&ctp=s552x414&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=50ad20&_nc_ohc=3bXCaMEA9RAQ7kNvwHoehwL&_nc_oc=AdotbeJIKmJ68bRxlUXS9ntTkZ6Ehy-wbu8RkhR5sCJzhGkscjfjTk15xNgiVc50p4SJTXwou-AH4u2mUU-KLVEg&_nc_zt=23&_nc_ht=scontent.fbho3-4.fna&_nc_gid=WO_4yf_AarPH_y1ziBfE9g&_nc_ss=7b2a8&oh=00_AQOqNOeOM7-18xHL43c_-s5913mqqye_T6Gbor-GBYC7tQ&oe=6AD4C7CE'
+  'https://images.pexels.com/photos/32191353/pexels-photo-32191353.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop'
 
 export function Hero() {
   const scrollToSection = (href: string) => {
@@ -13,9 +14,9 @@ export function Hero() {
 
   return (
     <section className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden" style={{ paddingTop: '120px' }}>
-      {/* Background image */}
+      {/* Background image with slow zoom */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="slow-zoom absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url('${HERO_IMAGE}')` }}
       />
       {/* Legibility scrim */}
@@ -26,7 +27,7 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-3xl px-6 py-20 text-center">
+      <div className="hero-anim relative z-10 mx-auto w-full max-w-3xl px-6 py-20 text-center">
         {/* Brand name */}
         <p className="font-heading text-4xl sm:text-5xl tracking-tight" style={{ color: colors.backgroundCard }}>
           Tayt&apos;s Cakes
@@ -55,7 +56,7 @@ export function Hero() {
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <button
             onClick={() => scrollToSection('#visit')}
-            className="rounded-full px-8 py-3 font-body text-sm font-bold uppercase tracking-wider transition-all hover:scale-105"
+            className="rounded-full px-8 py-3 font-body text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
             style={{ backgroundColor: colors.accentGold, color: colors.background }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = colors.accentGoldDark
@@ -68,7 +69,7 @@ export function Hero() {
           </button>
           <button
             onClick={() => scrollToSection('#flavors')}
-            className="rounded-full px-8 py-3 font-body text-sm font-bold uppercase tracking-wider transition-all"
+            className="rounded-full px-8 py-3 font-body text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:scale-105 active:scale-95"
             style={{ border: `2px solid ${colors.backgroundCard}`, color: colors.backgroundCard }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = `${colors.backgroundCard}1f`
@@ -82,7 +83,7 @@ export function Hero() {
         </div>
 
         {/* Social proof */}
-        <div className="mt-8 flex items-center justify-center gap-3">
+        <div className="shimmer-anim mt-8 flex items-center justify-center gap-3">
           <span className="text-lg tracking-tight" style={{ color: colors.accentRose }}>
             ★★★★★
           </span>

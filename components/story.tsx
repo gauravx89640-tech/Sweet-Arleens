@@ -5,7 +5,7 @@ export function Story() {
     <section id="story" className="w-full py-16 sm:py-24" style={{ backgroundColor: colors.backgroundCard }}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-14 text-center">
+        <div className="reveal-item mb-14 text-center">
           <p className="font-body text-xs font-bold uppercase tracking-widest mb-3" style={{ color: colors.accentGold }}>
             Our Story
           </p>
@@ -17,11 +17,11 @@ export function Story() {
 
         {/* Feature: Baker portrait + narrative */}
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          {/* Portrait */}
-          <div className="relative mx-auto w-full max-w-md">
-            <div className="overflow-hidden rounded-3xl" style={{ border: `4px solid ${colors.accentGold}` }}>
+          {/* Portrait — user-provided photo of Taytlyn */}
+          <div className="reveal-item relative mx-auto w-full max-w-md">
+            <div className="overflow-hidden rounded-3xl transition-all duration-500 hover:shadow-2xl" style={{ border: `4px solid ${colors.accentGold}` }}>
               <img
-                src="https://scontent.fbho3-5.fna.fbcdn.net/v/t39.30808-6/471425449_910730567852780_2921352559614269689_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2044&ctp=s552x414&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=50ad20&_nc_ohc=dFSuZNwXsNQQ7kNvwE2CsZt&_nc_oc=AdrJxseP21vcDUcP0dfBVZKvXbwf4Y2zOfEQ2iNDArithdAFX3M5YkLTnmIKZMYhrfUhNau7DEGjzu_LP1T3eIq7&_nc_zt=23&_nc_ht=scontent.fbho3-5.fna&_nc_gid=bjFFN4eD7mqbNHleaiarqQ&_nc_ss=7b2a8&oh=00_AQMbZ4XpUXJN_S4NgGGxQHWMe_ni4cfvYAZfWuFRGbEkUQ&oe=6AD4AE68"
+                src="https://scontent.fbho3-3.fna.fbcdn.net/v/t39.30808-6/508816862_3500167523455696_3970120062036556752_n.jpg?stp=dst-jpg_tt6&cstp=mx1179x1180&ctp=s1179x1180&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=x-flLi_T5QAQ7kNvwHpaTrn&_nc_oc=AdobHaN1kJTgB3nepQVDOjk1hkF825oDpgdv3eV9obyiZFOs0AJegbrWXnT3FWdFXDZJr_YYxGLbfJ0248Wa668N&_nc_zt=23&_nc_ht=scontent.fbho3-3.fna&_nc_gid=hcl9tf1r0lXq8pSDaHlhYA&_nc_ss=7b2a8&oh=00_AQNF1i0wky1lwxM4HyJx9uESe0upUHeCtdnCTb7Cbt0POw&oe=6AD4F188"
                 alt="Taytlyn Greasham, owner and baker at Tayt's Cakes"
                 className="w-full object-cover"
                 style={{ aspectRatio: '4 / 5', objectPosition: '50% 20%' }}
@@ -29,7 +29,7 @@ export function Story() {
             </div>
             {/* Caption chip */}
             <div
-              className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-5 py-2 shadow-lg"
+              className="float-anim absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-5 py-2 shadow-lg"
               style={{ backgroundColor: colors.accentGold }}
             >
               <span className="font-body text-xs font-bold uppercase tracking-wider" style={{ color: colors.background }}>
@@ -39,7 +39,7 @@ export function Story() {
           </div>
 
           {/* Narrative */}
-          <div>
+          <div className="reveal-item">
             <p className="font-body text-xs font-bold uppercase tracking-widest mb-4" style={{ color: colors.accentGold }}>
               Meet the Maker
             </p>

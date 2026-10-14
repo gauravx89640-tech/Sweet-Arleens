@@ -8,7 +8,7 @@ export function Visit() {
     <section id="visit" className="w-full py-16 sm:py-24" style={{ backgroundColor: colors.backgroundTaupe, color: colors.backgroundCard }}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-16 text-center">
+        <div className="reveal-item mb-16 text-center">
           <p className="font-body text-xs font-bold uppercase tracking-widest mb-3 opacity-90" style={{ color: colors.backgroundCard }}>
             Order Yours
           </p>
@@ -21,7 +21,7 @@ export function Visit() {
         {/* Two Column Layout */}
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Left Column - Contact & Fulfillment */}
-          <div>
+          <div className="reveal-item">
             <p className="font-body text-lg mb-8 leading-relaxed" style={{ color: `${colors.backgroundCard}e6` }}>
               Planning a celebration or just craving something sweet? Reach out
               and we&apos;ll bring your vision to life — homemade, from scratch,
@@ -36,7 +36,7 @@ export function Visit() {
                 </p>
                 <a
                   href="tel:+13163001171"
-                  className="font-body text-lg font-medium transition-colors"
+                  className="font-body text-lg font-medium transition-colors hover:text-[#E8B4A0]"
                   style={{ color: colors.backgroundCard }}
                 >
                   (316) 300-1171
@@ -48,7 +48,7 @@ export function Visit() {
                 </p>
                 <a
                   href="mailto:taytlyngreasham@yahoo.com"
-                  className="font-body text-lg font-medium transition-colors break-all"
+                  className="font-body text-lg font-medium transition-colors break-all hover:text-[#E8B4A0]"
                   style={{ color: colors.background }}
                 >
                   taytlyngreasham@yahoo.com
@@ -59,7 +59,7 @@ export function Visit() {
             {/* Email Button */}
             <a
               href="mailto:taytlyngreasham@yahoo.com"
-              className="inline-block rounded-full px-6 py-3 font-body text-xs font-bold uppercase tracking-wider transition-all hover:scale-105 mb-8"
+              className="inline-block rounded-full px-6 py-3 font-body text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 mb-8"
               style={{ backgroundColor: colors.background, color: colors.foreground }}
             >
               Email Us to Order
@@ -74,7 +74,7 @@ export function Visit() {
                 {['In-Store Pickup', 'Curbside Pickup', 'Local Delivery'].map((option) => (
                   <span
                     key={option}
-                    className="rounded-full px-4 py-2 font-body text-sm font-medium"
+                    className="rounded-full px-4 py-2 font-body text-sm font-medium transition-all duration-300 hover:scale-105"
                     style={{ border: `2px solid ${colors.backgroundCard}66`, color: colors.backgroundCard }}
                   >
                     {option}
@@ -100,7 +100,7 @@ export function Visit() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="rounded-full p-3 transition-all hover:scale-110"
+                className="rounded-full p-3 transition-all duration-300 hover:scale-110 hover:bg-[#E8B4A0]/20"
                 style={{ border: `2px solid ${colors.backgroundCard}`, color: colors.backgroundCard }}
               >
                 <FacebookIcon size={20} />
@@ -109,12 +109,12 @@ export function Visit() {
           </div>
 
           {/* Right Column - Baking photo & details */}
-          <div>
+          <div className="reveal-item">
             {/* Baking photo — large */}
-            <div className="overflow-hidden rounded-3xl">
+            <div className="overflow-hidden rounded-3xl transition-all duration-500 hover:shadow-2xl">
               <img
-                src="https://scontent.fbho3-4.fna.fbcdn.net/v/t39.30808-6/470180387_908167684775735_1113317273288715120_n.jpg?stp=c0.169.1536.1536a_dst-jpg_tt6&cstp=mx1536x1536&ctp=s552x414&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=50ad20&_nc_ohc=gEB5Q7Aq2ckQ7kNvwFjJ3d0&_nc_oc=AdriMYH910VzbD3JWD7FrVzNW6A-zBho5OWgNjf1genePk1OuTQm7y8DxDZstHc9oAmUD9pgbSd9sKpyO4mZbpW3&_nc_zt=23&_nc_ht=scontent.fbho3-4.fna&_nc_gid=IiKwZJqjgiRymQrvxNVpkA&_nc_ss=7b2a8&oh=00_AQNfM_1c9_nbRyxQOAfuzZeaeTJl2ewUQZ8XpGHWWx1C6A&oe=6AD4D121"
-                alt="Tayt's Cakes custom baked goods"
+                src="https://images.pexels.com/photos/6223181/pexels-photo-6223181.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                alt="Baker rolling dough in a rustic kitchen"
                 className="w-full object-cover"
                 style={{ height: '440px' }}
               />

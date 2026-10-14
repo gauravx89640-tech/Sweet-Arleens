@@ -6,7 +6,7 @@ export function TrustStrip() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-3 gap-4 mb-6 sm:gap-12">
           {/* Stat 1 */}
-          <div className="text-center">
+          <div className="reveal-item text-center transition-all duration-500 hover:scale-105">
             <p className="font-heading text-4xl sm:text-5xl font-bold" style={{ color: colors.accentGold }}>
               100%
             </p>
@@ -16,7 +16,7 @@ export function TrustStrip() {
           </div>
 
           {/* Stat 2 */}
-          <div className="text-center">
+          <div className="reveal-item text-center transition-all duration-500 hover:scale-105">
             <p className="font-heading text-4xl sm:text-5xl font-bold" style={{ color: colors.accentGold }}>
               7+
             </p>
@@ -26,7 +26,7 @@ export function TrustStrip() {
           </div>
 
           {/* Stat 3 */}
-          <div className="text-center">
+          <div className="reveal-item text-center transition-all duration-500 hover:scale-105">
             <p className="font-heading text-4xl sm:text-5xl font-bold" style={{ color: colors.accentGold }}>
               Pickup
             </p>
@@ -37,7 +37,7 @@ export function TrustStrip() {
         </div>
 
         {/* Attribution */}
-        <div className="pt-6 text-center" style={{ borderTopColor: `${colors.backgroundTaupe}4d`, borderTopWidth: '1px' }}>
+        <div className="reveal-item pt-6 text-center" style={{ borderTopColor: `${colors.backgroundTaupe}4d`, borderTopWidth: '1px' }}>
           <p className="font-body text-sm" style={{ color: `${colors.foreground}99` }}>
             Proudly serving Wichita, Andover, Goddard, Augusta, Derby, Topeka &amp; Hutchinson
           </p>
