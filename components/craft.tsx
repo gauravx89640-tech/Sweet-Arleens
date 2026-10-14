@@ -8,7 +8,7 @@ export function Craft() {
       image: 'https://scontent.fbho3-3.fna.fbcdn.net/v/t39.30808-6/470683001_905372728388564_874552493969151533_n.jpg?stp=dst-jpg_tt6&cstp=mx2034x2048&ctp=s2034x2048&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=K5CAem5lo74Q7kNvwEdtKJU&_nc_oc=Adrf4Fpa4SQj_xyMQ3nI8dnGR24Wq1XSYyUz6AtIgs52IxdiYH-SYl_o8s1FOdfv1aSTyZbgf050zzn9uX_LzygL&_nc_zt=23&_nc_ht=scontent.fbho3-3.fna&_nc_gid=w347lFIvM6VI9cvkx519NQ&_nc_ss=7b2a8&oh=00_AQOyYEDhIOuuiQFPa9o9KotB_bpYeI4X8sJCUYCciXhFEQ&oe=6AD4B697',
       pos: 'center 40%',
       description:
-        'Themed birthday cakes, Sonic cakes, Tres Leches, cinnamon roll cakes, and more — designed around your celebration.',
+        'Themed birthday cakes, Sonic cakes, Tres Leches, cinnamon roll cakes — designed around your celebration.',
     },
     {
       title: 'Cupcakes',
@@ -34,33 +34,34 @@ export function Craft() {
   ]
 
   return (
-    <section id="craft" className="w-full py-16 sm:py-24" style={{ backgroundColor: colors.background }}>
+    <section id="craft" className="w-full py-20 sm:py-32" style={{ backgroundColor: colors.background }}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-16 text-center">
-          <p className="font-body text-xs font-bold uppercase tracking-widest mb-3" style={{ color: colors.accentGold }}>
+        {/* Header — left-aligned editorial style */}
+        <div className="mb-16 max-w-2xl">
+          <p className="eyebrow mb-4" style={{ color: 'rgba(30,30,30,0.5)' }}>
             Our Craft
           </p>
-          <h2 className="font-heading text-4xl sm:text-5xl font-bold" style={{ color: colors.foreground }}>
-            The Art of{' '}
-            <span className="italic font-light">Homemade Baking</span>
+          <h2 className="font-heading text-3xl sm:text-4xl font-normal leading-tight" style={{ color: colors.foreground }}>
+            Everything is baked{' '}
+            <span className="italic font-light">from scratch</span>{' '}
+            and made to order.
           </h2>
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
           {products.map((product) => (
             <div
               key={product.title}
-              className="group flex flex-col overflow-hidden rounded-3xl transition-all hover:shadow-lg"
+              className="group flex flex-col overflow-hidden rounded-lg transition-all duration-500 hover:shadow-md"
               style={{ backgroundColor: colors.backgroundCard }}
             >
               {/* Image */}
-              <div className="w-full overflow-hidden" style={{ height: '300px' }}>
+              <div className="w-full overflow-hidden" style={{ height: '280px' }}>
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   style={{ objectPosition: product.pos }}
                 />
               </div>
@@ -68,16 +69,20 @@ export function Craft() {
               {/* Content */}
               <div className="flex flex-1 flex-col justify-between p-6">
                 <div>
-                  <h3 className="font-heading text-xl font-bold mb-3" style={{ color: colors.foreground }}>
+                  <h3 className="font-heading text-lg font-medium mb-2" style={{ color: colors.foreground }}>
                     {product.title}
                   </h3>
-                  <p className="font-body text-sm leading-relaxed" style={{ color: `${colors.foreground}b3` }}>
+                  <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(30,30,30,0.6)' }}>
                     {product.description}
                   </p>
                 </div>
 
-                <a href="mailto:taytlyngreasham@yahoo.com" className="mt-6 inline-flex items-center gap-2 font-body text-sm font-medium transition-all hover:gap-3" style={{ color: colors.accentGold }}>
-                  Inquire <ArrowRightIcon size={16} />
+                <a
+                  href="mailto:taytlyngreasham@yahoo.com"
+                  className="mt-5 inline-flex items-center gap-1.5 font-body text-xs font-medium uppercase tracking-wider transition-all hover:gap-3"
+                  style={{ color: colors.foreground }}
+                >
+                  Inquire <ArrowRightIcon size={14} />
                 </a>
               </div>
             </div>

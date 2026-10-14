@@ -12,83 +12,63 @@ export function Hero() {
   }
 
   return (
-    <section className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden" style={{ paddingTop: '120px' }}>
+    <section className="relative flex min-h-[92vh] w-full items-center justify-center overflow-hidden" style={{ paddingTop: '120px' }}>
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url('${HERO_IMAGE}')` }}
       />
-      {/* Legibility scrim */}
+      {/* Legibility scrim — asymmetric editorial gradient */}
       <div
         className="absolute inset-0"
         style={{
-          background: `linear-gradient(${colors.foreground}cc, ${colors.foreground}99, ${colors.foreground}cc)`,
+          background: `linear-gradient(180deg, rgba(30,30,30,0.75) 0%, rgba(30,30,30,0.5) 40%, rgba(30,30,30,0.8) 100%)`,
         }}
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-3xl px-6 py-20 text-center">
-        {/* Brand name */}
-        <p className="font-heading text-4xl sm:text-5xl tracking-tight" style={{ color: colors.backgroundCard }}>
+      <div className="relative z-10 mx-auto w-full max-w-2xl px-6 py-20 text-center">
+        {/* Brand name — small, refined, top */}
+        <p className="font-heading text-2xl sm:text-3xl tracking-[0.02em] mb-6" style={{ color: colors.background }}>
           Tayt&apos;s Cakes
         </p>
-        <div className="mx-auto my-5 h-px w-16" style={{ backgroundColor: `${colors.accentRose}cc` }} />
 
-        {/* Eyebrow */}
-        <p className="mb-6 font-body text-xs font-bold uppercase tracking-[0.25em]" style={{ color: colors.accentRose }}>
-          Wichita, Kansas · Home-Based Bakery
-        </p>
-
-        {/* Headline */}
-        <h1 className="mx-auto mb-6 max-w-2xl font-heading text-4xl font-bold leading-[1.08] sm:text-6xl xl:text-7xl" style={{ color: colors.backgroundCard }}>
-          Baked from Scratch,{' '}
-          <span className="italic font-light">Made Just for You.</span>
+        {/* Headline — large editorial serif */}
+        <h1 className="mx-auto mb-8 max-w-xl font-heading text-4xl font-normal leading-[1.1] sm:text-5xl xl:text-6xl" style={{ color: colors.background }}>
+          Baked from scratch,{''}
+          <span className="italic font-light"> made just for you.</span>
         </h1>
 
-        {/* Subheading */}
-        <p className="mx-auto mb-9 max-w-xl font-body text-lg leading-relaxed" style={{ color: `${colors.backgroundCard}e6` }}>
-          Custom cakes, cupcakes, cookies, pies, cake pops, and specialty
-          cheesecakes — handcrafted by Taytlyn Greasham for your celebrations
-          across the Wichita metro.
+        {/* Subheading — restrained, not too wide */}
+        <p className="mx-auto mb-10 max-w-md font-body text-base leading-relaxed" style={{ color: 'rgba(251,250,250,0.8)' }}>
+          Custom cakes, cupcakes, cookies, pies, and cheesecakes —
+          handcrafted by Taytlyn Greasham for celebrations across the
+          Wichita metro.
         </p>
 
-        {/* Buttons */}
-        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        {/* Buttons — clean, minimal, editorial */}
+        <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
           <button
             onClick={() => scrollToSection('#visit')}
-            className="rounded-full px-8 py-3 font-body text-sm font-bold uppercase tracking-wider transition-all hover:scale-105"
-            style={{ backgroundColor: colors.accentGold, color: colors.backgroundCard }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = colors.accentGoldDark
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = colors.accentGold
-            }}
+            className="rounded-full px-7 py-3 font-body text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-300 hover:opacity-85"
+            style={{ backgroundColor: colors.background, color: colors.foreground }}
           >
             Order a Custom Cake
           </button>
           <button
             onClick={() => scrollToSection('#flavors')}
-            className="rounded-full px-8 py-3 font-body text-sm font-bold uppercase tracking-wider transition-all"
-            style={{ border: `2px solid ${colors.backgroundCard}`, color: colors.backgroundCard }}
+            className="rounded-full px-7 py-3 font-body text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-300"
+            style={{ border: `1px solid rgba(251,250,250,0.5)`, color: colors.background }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = `${colors.backgroundCard}1f`
+              e.currentTarget.style.backgroundColor = 'rgba(251,250,250,0.1)'
+              e.currentTarget.style.borderColor = colors.background
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = 'transparent'
+              e.currentTarget.style.borderColor = 'rgba(251,250,250,0.5)'
             }}
           >
-            Explore Our Flavors
+            Explore Flavors
           </button>
-        </div>
-
-        {/* Social proof */}
-        <div className="mt-8 flex items-center justify-center gap-3">
-          <span className="text-lg tracking-tight" style={{ color: colors.accentRose }}>
-            ★★★★★
-          </span>
-          <span className="font-body text-sm" style={{ color: `${colors.backgroundCard}cc` }}>
-            Homemade with love for Wichita celebrations
-          </span>
         </div>
       </div>
     </section>

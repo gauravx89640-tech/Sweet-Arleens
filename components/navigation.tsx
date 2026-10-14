@@ -30,87 +30,74 @@ export function Navigation() {
     element?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  // Solid (cream) state when scrolled or when the mobile menu is open;
-  // otherwise transparent so the hero shows through.
   const solid = scrolled || isOpen
-  const linkColor = solid ? colors.foreground : colors.backgroundCard
+  const linkColor = solid ? colors.foreground : colors.background
 
   return (
     <nav
-      className="w-full transition-all duration-300"
+      className="w-full transition-all duration-400"
       style={{
         backgroundColor: solid ? colors.background : 'transparent',
-        borderBottomColor: solid ? `${colors.backgroundTaupe}4d` : 'transparent',
-        borderBottomWidth: '1px',
-        boxShadow: scrolled ? `0 6px 24px -12px ${colors.foreground}59` : 'none',
+        borderBottom: solid ? `1px solid ${colors.backgroundTaupe}30` : '1px solid transparent',
       }}
     >
-      <div className="mx-auto max-w-7xl px-4 py-3 sm:py-4">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo — refined text wordmark */}
           <button
             onClick={() => scrollToSection('#')}
-            className="font-heading text-2xl font-bold transition-opacity hover:opacity-75"
+            className="font-heading text-xl font-medium tracking-tight transition-opacity hover:opacity-60"
             aria-label="Tayt's Cakes — home"
-            style={{ color: solid ? colors.foreground : colors.backgroundCard }}
+            style={{ color: linkColor }}
           >
             Tayt&apos;s Cakes
           </button>
 
           {/* Desktop Nav */}
-          <div className="hidden items-center gap-9 md:flex">
+          <div className="hidden items-center gap-8 md:flex">
             {navLinks.map((link) => (
               <button
                 key={link.label}
                 onClick={() => scrollToSection(link.href)}
-                className="nav-link font-body text-sm font-medium tracking-wide transition-colors"
+                className="nav-link font-body text-xs font-medium uppercase tracking-wider transition-opacity hover:opacity-60"
                 style={{ color: linkColor }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = colors.accentGold
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = linkColor
-                }}
               >
                 {link.label}
               </button>
             ))}
           </div>
 
-          {/* CTA Button Desktop */}
+          {/* CTA Button — minimal outline */}
           <button
             onClick={() => scrollToSection('#visit')}
-            className="hidden rounded-full px-6 py-2 font-body text-xs font-bold uppercase tracking-wider transition-all hover:scale-105 md:inline-block"
-            style={{ backgroundColor: colors.accentGold, color: colors.backgroundCard }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = colors.accentGoldDark
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = colors.accentGold
+            className="hidden rounded-full px-5 py-2 font-body text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-300 hover:opacity-85 md:inline-block"
+            style={{
+              border: `1px solid ${solid ? colors.foreground : colors.background}`,
+              color: linkColor,
             }}
           >
-            Order a Cake
+            Order
           </button>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            style={{ color: solid ? colors.accentGold : colors.backgroundCard }}
+            style={{ color: linkColor }}
             className="md:hidden"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
         {/* Mobile Nav */}
         {isOpen && (
-          <div className="mt-4 space-y-3 pt-4 md:hidden" style={{ borderTopColor: `${colors.backgroundTaupe}33`, borderTopWidth: '1px' }}>
+          <div className="mt-4 space-y-3 pt-4 md:hidden" style={{ borderTop: `1px solid ${colors.backgroundTaupe}30` }}>
             {navLinks.map((link) => (
               <button
                 key={link.label}
                 onClick={() => scrollToSection(link.href)}
-                className="block w-full py-2 text-left font-body text-sm font-medium transition-colors"
+                className="block w-full py-1.5 text-left font-body text-sm font-medium"
                 style={{ color: colors.foreground }}
               >
                 {link.label}
@@ -118,10 +105,10 @@ export function Navigation() {
             ))}
             <button
               onClick={() => scrollToSection('#visit')}
-              className="mt-4 w-full rounded-full px-4 py-2.5 font-body text-xs font-bold uppercase tracking-wider transition-all"
-              style={{ backgroundColor: colors.accentGold, color: colors.backgroundCard }}
+              className="mt-3 w-full rounded-full px-4 py-2.5 font-body text-xs font-semibold uppercase tracking-[0.15em]"
+              style={{ border: `1px solid ${colors.foreground}`, color: colors.foreground }}
             >
-              Order a Cake
+              Order
             </button>
           </div>
         )}

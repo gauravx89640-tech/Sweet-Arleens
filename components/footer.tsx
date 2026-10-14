@@ -13,32 +13,32 @@ export function Footer() {
   ]
 
   return (
-    <footer className="w-full" style={{ backgroundColor: colors.foreground, color: colors.backgroundCard }}>
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+    <footer className="w-full" style={{ backgroundColor: colors.backgroundCard, color: colors.foreground }}>
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         {/* Top Section */}
-        <div className="mb-8 grid gap-12 md:grid-cols-3">
+        <div className="mb-10 grid gap-10 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <h3 className="font-heading text-xl font-bold mb-2" style={{ color: colors.backgroundCard }}>
+            <h3 className="font-heading text-xl font-medium mb-2" style={{ color: colors.foreground }}>
               Tayt&apos;s Cakes
             </h3>
-            <p className="font-body text-sm" style={{ color: `${colors.backgroundCard}b3` }}>
+            <p className="font-body text-sm" style={{ color: 'rgba(30,30,30,0.55)' }}>
               Homemade custom cakes &amp; sweets in Wichita, Kansas
             </p>
           </div>
 
           {/* Nav Links */}
           <div>
-            <h4 className="font-body text-xs font-bold uppercase tracking-widest mb-4" style={{ color: `${colors.backgroundCard}b3` }}>
+            <p className="eyebrow mb-4" style={{ color: 'rgba(30,30,30,0.4)' }}>
               Navigation
-            </h4>
-            <div className="space-y-2">
+            </p>
+            <div className="space-y-1.5">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="block font-body text-sm transition-colors"
-                  style={{ color: `${colors.backgroundCard}cc` }}
+                  className="block font-body text-sm transition-opacity hover:opacity-60"
+                  style={{ color: colors.foreground }}
                 >
                   {link.label}
                 </a>
@@ -46,37 +46,35 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Social */}
+          {/* Contact + Social */}
           <div>
-            <h4 className="font-body text-xs font-bold uppercase tracking-widest mb-4" style={{ color: `${colors.backgroundCard}b3` }}>
-              Follow Us
-            </h4>
-            <div className="flex gap-3">
-              <a
-                href="https://www.facebook.com/profile.php?id=61573446252959"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="rounded-full p-2 transition-all"
-                style={{ border: `2px solid ${colors.backgroundCard}66`, color: `${colors.backgroundCard}b3` }}
-              >
-                <FacebookIcon size={18} />
-              </a>
-            </div>
-            <div className="mt-4">
-              <p className="font-body text-sm" style={{ color: `${colors.backgroundCard}99` }}>
+            <p className="eyebrow mb-4" style={{ color: 'rgba(30,30,30,0.4)' }}>
+              Contact
+            </p>
+            <div className="space-y-1 mb-4">
+              <p className="font-body text-sm" style={{ color: colors.foreground }}>
                 (316) 300-1171
               </p>
-              <p className="font-body text-sm" style={{ color: `${colors.backgroundCard}99` }}>
+              <p className="font-body text-sm" style={{ color: colors.foreground }}>
                 taytlyngreasham@yahoo.com
               </p>
             </div>
+            <a
+              href="https://www.facebook.com/profile.php?id=61573446252959"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="inline-flex rounded-full p-2 transition-all duration-300 hover:scale-105"
+              style={{ border: `1px solid ${colors.backgroundTaupe}66`, color: 'rgba(30,30,30,0.6)' }}
+            >
+              <FacebookIcon size={16} />
+            </a>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col items-center gap-2 pt-8 text-center sm:flex-row sm:justify-between" style={{ borderTopColor: `${colors.backgroundCard}33`, borderTopWidth: '1px' }}>
-          <p className="font-body text-xs" style={{ color: `${colors.backgroundCard}99` }}>
+        <div className="pt-6" style={{ borderTop: `1px solid ${colors.backgroundTaupe}40` }}>
+          <p className="font-body text-xs" style={{ color: 'rgba(30,30,30,0.4)' }}>
             © 2026 Tayt&apos;s Cakes · Wichita, KS
           </p>
         </div>
