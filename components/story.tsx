@@ -64,14 +64,16 @@ export function Story() {
             </p>
 
             {/* Signature */}
-            <div className="flex items-center gap-3 border-t pt-5" style={{ borderColor: `${colors.accentGold}40` } }>
+            <div className="flex items-center gap-3 border-t pt-5" style={{ borderColor: `${colors.accentGold}40` }}>
               <HeartIllustration size={28} color={colors.accentGold} />
-              <p className="font-heading text-2xl italic" style={{ color: colors.foreground }}>
-                Taytlyn Greasham
-              </p>
-              <p className="font-body text-sm mt-1" style={{ color: `${colors.foreground}99` }}>
-                Owner &amp; Baker
-              </p>
+              <div>
+                <p className="font-heading text-xl sm:text-2xl italic" style={{ color: colors.foreground }}>
+                  Taytlyn Greasham
+                </p>
+                <p className="font-body text-sm mt-0.5" style={{ color: `${colors.foreground}99` }}>
+                  Owner &amp; Baker
+                </p>
+              </div>
             </div>
           </div>
         </div>

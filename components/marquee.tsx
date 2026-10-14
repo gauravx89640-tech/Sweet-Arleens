@@ -21,11 +21,11 @@ export function Marquee() {
     >
       {/* Fade edges */}
       <div
-        className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20"
+        className="pointer-events-none absolute left-0 top-0 z-10 h-full w-12 sm:w-20"
         style={{ background: `linear-gradient(to right, ${colors.accentGold}, transparent)` }}
       />
       <div
-        className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20"
+        className="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 sm:w-20"
         style={{ background: `linear-gradient(to left, ${colors.accentGold}, transparent)` }}
       />
 

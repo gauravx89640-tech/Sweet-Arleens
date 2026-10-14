@@ -16,7 +16,7 @@ export function Footer() {
     <footer className="w-full" style={{ backgroundColor: colors.foreground, color: colors.backgroundCard }}>
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         {/* Top Section */}
-        <div className="mb-8 grid gap-12 md:grid-cols-3">
+        <div className="mb-8 grid gap-8 md:grid-cols-3 md:gap-12">
           {/* Brand */}
           <div>
             <h3 className="font-heading text-xl font-bold mb-2" style={{ color: colors.backgroundCard }}>

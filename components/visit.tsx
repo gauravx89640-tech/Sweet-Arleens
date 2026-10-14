@@ -21,7 +21,7 @@ export function Visit() {
         </div>
 
         {/* Two Column Layout */}
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Left Column - Contact & Fulfillment */}
           <div className="reveal-item">
             <p className="font-body text-lg mb-8 leading-relaxed" style={{ color: `${colors.backgroundCard}e6` }}>

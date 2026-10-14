@@ -22,12 +22,12 @@ export function Gallery() {
           <p className="font-body text-xs font-bold uppercase tracking-widest mb-3" style={{ color: colors.accentGold }}>
             The Work
           </p>
-          <div className="flex items-center justify-center gap-4 mb-2">
-            <div className="h-px w-12" style={{ backgroundColor: colors.accentGold }} />
-            <h2 className="font-heading text-4xl sm:text-5xl font-bold" style={{ color: colors.foreground }}>
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-2">
+            <div className="h-px w-8 sm:w-12 hidden sm:block" style={{ backgroundColor: colors.accentGold }} />
+            <h2 className="font-heading text-3xl sm:text-5xl font-bold" style={{ color: colors.foreground }}>
               Made <span className="italic font-light">to Order</span>
             </h2>
-            <div className="h-px w-12" style={{ backgroundColor: colors.accentGold }} />
+            <div className="h-px w-8 sm:w-12 hidden sm:block" style={{ backgroundColor: colors.accentGold }} />
           </div>
         </div>
 

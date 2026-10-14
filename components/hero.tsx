@@ -13,7 +13,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden" style={{ paddingTop: '120px' }}>
+    <section className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-20 pb-12 sm:pt-[120px]">
       {/* Background image with slow zoom */}
       <div
         className="slow-zoom absolute inset-0 bg-cover bg-center"
@@ -29,7 +29,7 @@ export function Hero() {
 
       <div className="hero-anim relative z-10 mx-auto w-full max-w-3xl px-6 py-20 text-center">
         {/* Brand name */}
-        <p className="font-heading text-4xl sm:text-5xl tracking-tight" style={{ color: colors.backgroundCard }}>
+        <p className="font-heading text-3xl sm:text-5xl tracking-tight" style={{ color: colors.backgroundCard }}>
           Tayt&apos;s Cakes
         </p>
         <div className="mx-auto my-5 h-px w-16" style={{ backgroundColor: `${colors.accentRose}cc` }} />
@@ -40,13 +40,13 @@ export function Hero() {
         </p>
 
         {/* Headline */}
-        <h1 className="mx-auto mb-6 max-w-2xl font-heading text-4xl font-bold leading-[1.08] sm:text-6xl xl:text-7xl" style={{ color: colors.backgroundCard }}>
+        <h1 className="mx-auto mb-6 max-w-2xl font-heading text-3xl font-bold leading-[1.1] sm:text-5xl xl:text-6xl" style={{ color: colors.backgroundCard }}>
           Baked from Scratch,{' '}
           <span className="italic font-light">Made Just for You.</span>
         </h1>
 
         {/* Subheading */}
-        <p className="mx-auto mb-9 max-w-xl font-body text-lg leading-relaxed" style={{ color: `${colors.backgroundCard}e6` }}>
+        <p className="mx-auto mb-9 max-w-xl font-body text-base sm:text-lg leading-relaxed" style={{ color: `${colors.backgroundCard}e6` }}>
           Custom cakes, cupcakes, cookies, pies, cake pops, and specialty
           cheesecakes — handcrafted by Taytlyn Greasham for your celebrations
           across the Wichita metro.
@@ -83,7 +83,7 @@ export function Hero() {
         </div>
 
         {/* Social proof */}
-        <div className="shimmer-anim mt-8 flex items-center justify-center gap-3">
+        <div className="shimmer-anim mt-8 flex flex-col items-center justify-center gap-1 sm:flex-row sm:gap-3">
           <span className="text-lg tracking-tight" style={{ color: colors.accentRose }}>
             ★★★★★
           </span>
