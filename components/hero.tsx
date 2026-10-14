@@ -26,12 +26,6 @@ export function Hero() {
       />
 
       <div className="hero-anim relative z-10 mx-auto w-full max-w-3xl px-6 py-20 text-center">
-        {/* Brand name */}
-        <p className="font-heading text-3xl sm:text-5xl tracking-tight" style={{ color: colors.backgroundCard }}>
-          Tayt&apos;s Cakes
-        </p>
-        <div className="mx-auto my-5 h-px w-16" style={{ backgroundColor: `${colors.accentRose}cc` }} />
-
         {/* Eyebrow */}
         <p className="mb-6 font-body text-xs font-bold uppercase tracking-[0.25em]" style={{ color: colors.accentRose }}>
           Wichita, Kansas · Home-Based Bakery
@@ -39,8 +33,8 @@ export function Hero() {
 
         {/* Headline */}
         <h1 className="mx-auto mb-6 max-w-2xl font-heading text-3xl font-bold leading-[1.1] sm:text-5xl xl:text-6xl" style={{ color: colors.backgroundCard }}>
-          Baked from Scratch,{' '}
-          <span className="italic font-light">Made Just for You.</span>
+          A little something sweet{' '}
+          <span className="italic font-light">for every celebration.</span>
         </h1>
 
         {/* Subheading */}
