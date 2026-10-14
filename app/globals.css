@@ -2,6 +2,8 @@
 
 :root {
   color-scheme: light;
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --font-playfair: 'Fraunces', 'Playfair Display', serif;
 }
 
 @theme {

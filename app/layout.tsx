@@ -1,20 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Fraunces, DM_Sans } from 'next/font/google'
 import './globals.css'
-
-const fraunces = Fraunces({
-  variable: '--font-playfair',
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '900'],
-  style: ['normal', 'italic'],
-})
-
-const dmSans = DM_Sans({
-  variable: '--font-dm-sans',
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-})
 
 export const metadata: Metadata = {
   title: "Tayt's Cakes | Custom Home Bakery in Wichita, KS",
@@ -36,8 +22,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${dmSans.variable} bg-background`}
+      className="bg-background"
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="font-body antialiased">
         <script
           dangerouslySetInnerHTML={{
