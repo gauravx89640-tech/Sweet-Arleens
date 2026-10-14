@@ -2,10 +2,8 @@
 
 import { colors } from '@/lib/colors'
 
-// Full-bleed editorial hero. Background is a stock "mood" cake shot (easy to
-// swap — just change HERO_IMAGE); every photo below the hero is the real bakery.
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1780337092369-eefebe4facfd?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+  'https://scontent.fbho3-4.fna.fbcdn.net/v/t39.30808-6/470780243_905372785055225_834949861267358704_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2044&ctp=s552x414&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=50ad20&_nc_ohc=3bXCaMEA9RAQ7kNvwHoehwL&_nc_oc=AdotbeJIKmJ68bRxlUXS9ntTkZ6Ehy-wbu8RkhR5sCJzhGkscjfjTk15xNgiVc50p4SJTXwou-AH4u2mUU-KLVEg&_nc_zt=23&_nc_ht=scontent.fbho3-4.fna&_nc_gid=WO_4yf_AarPH_y1ziBfE9g&_nc_ss=7b2a8&oh=00_AQOqNOeOM7-18xHL43c_-s5913mqqye_T6Gbor-GBYC7tQ&oe=6AD4C7CE'
 
 export function Hero() {
   const scrollToSection = (href: string) => {
@@ -31,25 +29,26 @@ export function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-3xl px-6 py-20 text-center">
         {/* Brand name */}
         <p className="font-heading text-4xl sm:text-5xl tracking-tight" style={{ color: colors.backgroundCard }}>
-          Sweet Arleen&apos;s
+          Tayt&apos;s Cakes
         </p>
         <div className="mx-auto my-5 h-px w-16" style={{ backgroundColor: `${colors.accentRose}cc` }} />
 
         {/* Eyebrow */}
         <p className="mb-6 font-body text-xs font-bold uppercase tracking-[0.25em]" style={{ color: colors.accentRose }}>
-          Westlake Village, CA · Since 2009
+          Wichita, Kansas · Home-Based Bakery
         </p>
 
         {/* Headline */}
         <h1 className="mx-auto mb-6 max-w-2xl font-heading text-4xl font-bold leading-[1.08] sm:text-6xl xl:text-7xl" style={{ color: colors.backgroundCard }}>
-          Crafted with Heart,{' '}
-          <span className="italic font-light">Baked to Perfection.</span>
+          Baked from Scratch,{' '}
+          <span className="italic font-light">Made Just for You.</span>
         </h1>
 
         {/* Subheading */}
         <p className="mx-auto mb-9 max-w-xl font-body text-lg leading-relaxed" style={{ color: `${colors.backgroundCard}e6` }}>
-          Custom cakes, cupcakes, and pastries from a three-time Cupcake Wars
-          champion — made by hand, the way they should be.
+          Custom cakes, cupcakes, cookies, pies, cake pops, and specialty
+          cheesecakes — handcrafted by Taytlyn Greasham for your celebrations
+          across the Wichita metro.
         </p>
 
         {/* Buttons */}
@@ -88,7 +87,7 @@ export function Hero() {
             ★★★★★
           </span>
           <span className="font-body text-sm" style={{ color: `${colors.backgroundCard}cc` }}>
-            Loved by Westlake Village for 15+ years
+            Homemade with love for Wichita celebrations
           </span>
         </div>
       </div>

@@ -1,12 +1,11 @@
-// Palette drawn from the Sweet Arleen's logo: frosting rose + chocolate, on cream.
-// Note: keys keep their original names for compatibility, but the values are now
-// rose/chocolate (accentGold = rose accent, backgroundTaupe = chocolate band).
+// Palette for Tayt's Cakes — warm, inviting, home-bakery feel.
+// Dusty rose + warm caramel accents on cream, with a deep cocoa feature band.
 export const colors = {
-  background: '#FBF5EC', // warm ivory
-  backgroundCard: '#FFFCF6', // soft cream
-  backgroundTaupe: '#4E342A', // rich chocolate (dark feature band)
-  foreground: '#2A211A', // espresso text
-  accentGold: '#C25B74', // dusty frosting rose (primary accent)
-  accentGoldDark: '#9E3F57', // deeper rose (hover)
-  accentRose: '#F1D7DD', // pale blush (soft tints)
+  background: '#FDF6F0', // warm ivory
+  backgroundCard: '#FFFBF7', // soft cream
+  backgroundTaupe: '#5C3A2E', // rich cocoa (dark feature band)
+  foreground: '#3D2B1F', // dark espresso text
+  accentGold: '#C77B5C', // warm caramel/copper (primary accent)
+  accentGoldDark: '#A85F44', // deeper caramel (hover)
+  accentRose: '#E8A0AE', // dusty rose (soft tints)
 }

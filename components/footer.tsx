@@ -1,7 +1,7 @@
 'use client'
 
 import { colors } from '@/lib/colors'
-import { InstagramIcon, FacebookIcon, XIcon, LinkedInIcon } from '@/components/social-icons'
+import { FacebookIcon } from '@/components/social-icons'
 
 export function Footer() {
   const navLinks = [
@@ -9,30 +9,7 @@ export function Footer() {
     { label: 'Our Craft', href: '#craft' },
     { label: 'Flavors', href: '#flavors' },
     { label: 'Our Story', href: '#story' },
-    { label: 'Visit', href: '#visit' },
-  ]
-
-  const socialLinks = [
-    {
-      icon: InstagramIcon,
-      href: 'https://instagram.com/sweetarleens',
-      label: 'Instagram',
-    },
-    {
-      icon: FacebookIcon,
-      href: 'https://www.facebook.com/SweetArleens',
-      label: 'Facebook',
-    },
-    {
-      icon: XIcon,
-      href: 'https://twitter.com/sweetarleens',
-      label: 'Twitter',
-    },
-    {
-      icon: LinkedInIcon,
-      href: 'https://www.linkedin.com/company/sweet-arleen',
-      label: 'LinkedIn',
-    },
+    { label: 'Order', href: '#visit' },
   ]
 
   return (
@@ -43,10 +20,10 @@ export function Footer() {
           {/* Brand */}
           <div>
             <h3 className="font-heading text-xl font-bold mb-2" style={{ color: colors.backgroundCard }}>
-              Sweet Arleen&apos;s
+              Tayt&apos;s Cakes
             </h3>
             <p className="font-body text-sm" style={{ color: `${colors.backgroundCard}b3` }}>
-              Handcrafted in Westlake Village since 2009
+              Homemade custom cakes &amp; sweets in Wichita, Kansas
             </p>
           </div>
 
@@ -75,22 +52,24 @@ export function Footer() {
               Follow Us
             </h4>
             <div className="flex gap-3">
-              {socialLinks.map((social) => {
-                const Icon = social.icon
-                return (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.label}
-                    className="rounded-full p-2 transition-all"
-                    style={{ border: `2px solid ${colors.backgroundCard}66`, color: `${colors.backgroundCard}b3` }}
-                  >
-                    <Icon size={18} />
-                  </a>
-                )
-              })}
+              <a
+                href="https://www.facebook.com/profile.php?id=61573446252959"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="rounded-full p-2 transition-all"
+                style={{ border: `2px solid ${colors.backgroundCard}66`, color: `${colors.backgroundCard}b3` }}
+              >
+                <FacebookIcon size={18} />
+              </a>
+            </div>
+            <div className="mt-4">
+              <p className="font-body text-sm" style={{ color: `${colors.backgroundCard}99` }}>
+                (316) 300-1171
+              </p>
+              <p className="font-body text-sm" style={{ color: `${colors.backgroundCard}99` }}>
+                taytlyngreasham@yahoo.com
+              </p>
             </div>
           </div>
         </div>
@@ -98,19 +77,7 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="flex flex-col items-center gap-2 pt-8 text-center sm:flex-row sm:justify-between" style={{ borderTopColor: `${colors.backgroundCard}33`, borderTopWidth: '1px' }}>
           <p className="font-body text-xs" style={{ color: `${colors.backgroundCard}99` }}>
-            © 2026 Sweet Arleen&apos;s · Westlake Village, CA
-          </p>
-          <p className="font-body text-xs" style={{ color: `${colors.backgroundCard}80` }}>
-            Designed by{' '}
-            <a
-              href="https://forgestudio.one"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium transition-colors hover:underline"
-              style={{ color: `${colors.accentGold}` }}
-            >
-              Forge Studio
-            </a>
+            © 2026 Tayt&apos;s Cakes · Wichita, KS
           </p>
         </div>
       </div>

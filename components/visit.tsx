@@ -5,10 +5,7 @@ import { InstagramIcon, FacebookIcon, XIcon, LinkedInIcon, ArrowRightIcon } from
 
 export function Visit() {
   const socialLinks = [
-    { Icon: InstagramIcon, href: 'https://instagram.com/sweetarleens', label: 'Instagram' },
-    { Icon: FacebookIcon, href: 'https://www.facebook.com/SweetArleens', label: 'Facebook' },
-    { Icon: XIcon, href: 'https://twitter.com/sweetarleens', label: 'Twitter' },
-    { Icon: LinkedInIcon, href: 'https://www.linkedin.com/company/sweet-arleen', label: 'LinkedIn' },
+    { Icon: FacebookIcon, href: 'https://www.facebook.com/profile.php?id=61573446252959', label: 'Facebook' },
   ]
 
   return (
@@ -17,20 +14,22 @@ export function Visit() {
         {/* Header */}
         <div className="mb-16 text-center">
           <p className="font-body text-xs font-bold uppercase tracking-widest mb-3 opacity-90" style={{ color: colors.backgroundCard }}>
-            Visit Us
+            Order Yours
           </p>
           <h2 className="font-heading text-4xl sm:text-5xl font-bold" style={{ color: colors.backgroundCard }}>
-            Find Us. <span className="italic font-light">Order Yours.</span>
+            Get in Touch.{' '}
+            <span className="italic font-light">Place Your Order.</span>
           </h2>
         </div>
 
         {/* Two Column Layout */}
         <div className="grid gap-12 lg:grid-cols-2">
-          {/* Left Column - Contact */}
+          {/* Left Column - Contact & Fulfillment */}
           <div>
             <p className="font-body text-lg mb-8 leading-relaxed" style={{ color: `${colors.backgroundCard}e6` }}>
               Planning a celebration or just craving something sweet? Reach out
-              and we&apos;ll take care of the rest.
+              and we&apos;ll bring your vision to life — homemade, from scratch,
+              and made just for you.
             </p>
 
             {/* Contact Info */}
@@ -40,11 +39,11 @@ export function Visit() {
                   CALL
                 </p>
                 <a
-                  href="tel:+18053737373"
+                  href="tel:+13163001171"
                   className="font-body text-lg font-medium transition-colors"
                   style={{ color: colors.backgroundCard }}
                 >
-                  (805) 373-7373
+                  (316) 300-1171
                 </a>
               </div>
               <div>
@@ -52,23 +51,51 @@ export function Visit() {
                   EMAIL
                 </p>
                 <a
-                  href="mailto:sweetarleensbakery@gmail.com"
+                  href="mailto:taytlyngreasham@yahoo.com"
                   className="font-body text-lg font-medium transition-colors break-all"
                   style={{ color: colors.accentGold }}
                 >
-                  sweetarleensbakery@gmail.com
+                  taytlyngreasham@yahoo.com
                 </a>
               </div>
             </div>
 
             {/* Email Button */}
             <a
-              href="mailto:sweetarleensbakery@gmail.com"
+              href="mailto:taytlyngreasham@yahoo.com"
               className="inline-block rounded-full px-6 py-3 font-body text-xs font-bold uppercase tracking-wider transition-all hover:scale-105 mb-8"
               style={{ backgroundColor: colors.accentGold, color: colors.background }}
             >
               Email Us to Order
             </a>
+
+            {/* Fulfillment Options */}
+            <div className="mb-8">
+              <p className="font-body text-sm font-medium mb-3" style={{ color: `${colors.backgroundCard}b3` }}>
+                FULFILLMENT OPTIONS
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {['In-Store Pickup', 'Curbside Pickup', 'Local Delivery'].map((option) => (
+                  <span
+                    key={option}
+                    className="rounded-full px-4 py-2 font-body text-sm font-medium"
+                    style={{ border: `2px solid ${colors.backgroundCard}66`, color: colors.backgroundCard }}
+                  >
+                    {option}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Service Areas */}
+            <div className="mb-8">
+              <p className="font-body text-sm font-medium mb-3" style={{ color: `${colors.backgroundCard}b3` }}>
+                SERVICE AREAS
+              </p>
+              <p className="font-body text-base leading-relaxed" style={{ color: `${colors.backgroundCard}e6` }}>
+                Wichita, Andover, Goddard, Augusta, Derby, Topeka, and Hutchinson, KS
+              </p>
+            </div>
 
             {/* Social Icons */}
             <div className="flex gap-4 mb-8">
@@ -86,68 +113,46 @@ export function Visit() {
                 </a>
               ))}
             </div>
+          </div>
 
-            {/* Google Map */}
-            <div className="overflow-hidden rounded-3xl mb-4">
+          {/* Right Column - Baking photo & details */}
+          <div>
+            {/* Baking photo — large */}
+            <div className="overflow-hidden rounded-3xl">
+              <img
+                src="https://scontent.fbho3-4.fna.fbcdn.net/v/t39.30808-6/470180387_908167684775735_1113317273288715120_n.jpg?stp=c0.169.1536.1536a_dst-jpg_tt6&cstp=mx1536x1536&ctp=s552x414&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=50ad20&_nc_ohc=gEB5Q7Aq2ckQ7kNvwFjJ3d0&_nc_oc=AdriMYH910VzbD3JWD7FrVzNW6A-zBho5OWgNjf1genePk1OuTQm7y8DxDZstHc9oAmUD9pgbSd9sKpyO4mZbpW3&_nc_zt=23&_nc_ht=scontent.fbho3-4.fna&_nc_gid=IiKwZJqjgiRymQrvxNVpkA&_nc_ss=7b2a8&oh=00_AQNfM_1c9_nbRyxQOAfuzZeaeTJl2ewUQZ8XpGHWWx1C6A&oe=6AD4D121"
+                alt="Tayt's Cakes custom baked goods"
+                className="w-full object-cover"
+                style={{ height: '440px' }}
+              />
+            </div>
+            <p className="mt-3 px-1 font-body text-xs italic" style={{ color: `${colors.backgroundCard}cc` }}>
+              Every order is baked fresh from scratch in our home kitchen
+            </p>
+
+            {/* Service area map */}
+            <div className="mt-8 overflow-hidden rounded-3xl">
               <iframe
-                title="Sweet Arleen's location map"
+                title="Tayt's Cakes service area map"
                 width="100%"
                 height="300"
                 style={{ border: 0, display: 'block' }}
                 loading="lazy"
                 allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps?q=960%20S%20Westlake%20Blvd%20Suite%204%2C%20Westlake%20Village%2C%20CA%2091361&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src="https://www.google.com/maps?q=Wichita%2C%20Kansas&t=&z=10&ie=UTF8&iwloc=&output=embed"
               />
             </div>
 
-            {/* Maps Link */}
             <a
-              href="https://maps.google.com/?q=960+S+Westlake+Blvd+Suite+4+Westlake+Village+CA+91361"
+              href="https://maps.google.com/?q=Wichita+Kansas"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-body text-sm font-medium transition-all hover:gap-3"
+              className="mt-3 inline-flex items-center gap-2 font-body text-sm font-medium transition-all hover:gap-3"
               style={{ color: colors.accentGold }}
             >
-              Open in Google Maps <ArrowRightIcon size={16} />
+              View Service Area on Google Maps <ArrowRightIcon size={16} />
             </a>
-          </div>
-
-          {/* Right Column - Storefront & Location */}
-          <div>
-            {/* Storefront photo — large */}
-            <div className="overflow-hidden rounded-3xl">
-              <img
-                src="/shopoutside2.jpg"
-                alt="Sweet Arleen's storefront inside the Westlake Village center"
-                className="w-full object-cover"
-                style={{ height: '440px' }}
-              />
-            </div>
-            <p className="mt-3 px-1 font-body text-xs italic" style={{ color: `${colors.backgroundCard}cc` }}>
-              Find us at 960 South Westlake Blvd, Suite #4 — Westlake Village, CA
-            </p>
-
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <p className="font-body text-sm font-medium mb-2" style={{ color: `${colors.backgroundCard}b3` }}>
-                  ADDRESS
-                </p>
-                <p className="font-body text-base font-medium leading-relaxed" style={{ color: colors.backgroundCard }}>
-                  960 South Westlake Blvd, Suite #4<br />
-                  Westlake Village, CA 91361
-                </p>
-              </div>
-              <div>
-                <p className="font-body text-sm font-medium mb-2" style={{ color: `${colors.backgroundCard}b3` }}>
-                  HOURS
-                </p>
-                <p className="font-body text-base font-medium" style={{ color: colors.backgroundCard }}>
-                  Tue – Sat: 10:00am – 6:00pm<br />
-                  Sun &amp; Mon: Closed
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

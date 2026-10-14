@@ -33,7 +33,7 @@ section[id] {
   right: 0;
   bottom: -6px;
   height: 1.5px;
-  background-color: #c25b74;
+  background-color: #C77B5C;
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);

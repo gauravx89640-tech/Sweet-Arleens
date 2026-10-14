@@ -13,7 +13,7 @@ export function Navigation() {
     { label: 'Our Craft', href: '#craft' },
     { label: 'Flavors', href: '#flavors' },
     { label: 'Our Story', href: '#story' },
-    { label: 'Visit', href: '#visit' },
+    { label: 'Order', href: '#visit' },
   ]
 
   useEffect(() => {
@@ -50,18 +50,11 @@ export function Navigation() {
           {/* Logo */}
           <button
             onClick={() => scrollToSection('#')}
-            className="transition-opacity hover:opacity-75"
-            aria-label="Sweet Arleen's — home"
+            className="font-heading text-2xl font-bold transition-opacity hover:opacity-75"
+            aria-label="Tayt's Cakes — home"
+            style={{ color: solid ? colors.foreground : colors.backgroundCard }}
           >
-            <img
-              src="/logo.png"
-              alt="Sweet Arleen's"
-              style={{
-                height: '72px',
-                width: 'auto',
-                filter: solid ? 'none' : 'drop-shadow(0 2px 8px rgba(0,0,0,0.5))',
-              }}
-            />
+            Tayt&apos;s Cakes
           </button>
 
           {/* Desktop Nav */}

@@ -8,30 +8,30 @@ export function TrustStrip() {
           {/* Stat 1 */}
           <div className="text-center">
             <p className="font-heading text-4xl sm:text-5xl font-bold" style={{ color: colors.accentGold }}>
-              2009
+              100%
             </p>
             <p className="font-body text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style={{ color: `${colors.foreground}b3` }}>
-              Baking Since
+              Homemade from Scratch
             </p>
           </div>
 
           {/* Stat 2 */}
           <div className="text-center">
             <p className="font-heading text-4xl sm:text-5xl font-bold" style={{ color: colors.accentGold }}>
-              3×
+              7+
             </p>
             <p className="font-body text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style={{ color: `${colors.foreground}b3` }}>
-              Cupcake Wars Champion
+              Cities Served
             </p>
           </div>
 
           {/* Stat 3 */}
           <div className="text-center">
             <p className="font-heading text-4xl sm:text-5xl font-bold" style={{ color: colors.accentGold }}>
-              100%
+              Pickup
             </p>
             <p className="font-body text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style={{ color: `${colors.foreground}b3` }}>
-              Handcrafted Daily
+              Curbside &amp; Delivery
             </p>
           </div>
         </div>
@@ -39,7 +39,7 @@ export function TrustStrip() {
         {/* Attribution */}
         <div className="pt-6 text-center" style={{ borderTopColor: `${colors.backgroundTaupe}4d`, borderTopWidth: '1px' }}>
           <p className="font-body text-sm" style={{ color: `${colors.foreground}99` }}>
-            As seen on Food Network&apos;s Cupcake Wars
+            Proudly serving Wichita, Andover, Goddard, Augusta, Derby, Topeka &amp; Hutchinson
           </p>
         </div>
       </div>

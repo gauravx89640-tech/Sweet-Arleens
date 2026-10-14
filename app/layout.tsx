@@ -17,32 +17,15 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Sweet Arleen's | Award-Winning Bakery in Westlake Village, CA",
+  title: "Tayt's Cakes | Custom Home Bakery in Wichita, KS",
   description:
-    "Custom cakes, cupcakes & pastries from Sweet Arleen's — a 3x Food Network Cupcake Wars champion in Westlake Village, CA. Order yours today.",
+    "Custom cakes, cupcakes, cookies, pies, cake pops & cheesecakes from Tayt's Cakes — a home-based bakery by Taytlyn Greasham serving Wichita and surrounding areas. Order yours today.",
   generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
 }
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: [{ media: '(prefers-color-scheme: light)', color: '#FBF5EC' }],
+  themeColor: [{ media: '(prefers-color-scheme: light)', color: '#FDF6F0' }],
 }
 
 export default function RootLayout({
@@ -56,7 +39,6 @@ export default function RootLayout({
       className={`${fraunces.variable} ${dmSans.variable} bg-background`}
     >
       <body className="font-body antialiased">
-        {/* Set html.js before paint so scroll-reveal can hide sections with no flash */}
         <script
           dangerouslySetInnerHTML={{
             __html: "document.documentElement.classList.add('js')",
