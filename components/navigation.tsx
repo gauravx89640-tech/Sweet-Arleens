@@ -31,23 +31,23 @@ export function Navigation() {
   }
 
   const solid = scrolled || isOpen
-  const linkColor = solid ? colors.foreground : colors.background
+  const linkColor = solid ? colors.foreground : colors.backgroundCard
+  const bgColor = solid ? colors.background : 'transparent'
 
   return (
     <nav
-      className="w-full transition-all duration-400"
+      className="w-full transition-all duration-300"
       style={{
-        backgroundColor: solid ? colors.background : 'transparent',
-        borderBottom: solid ? `1px solid ${colors.backgroundTaupe}30` : '1px solid transparent',
+        backgroundColor: bgColor,
+        borderBottom: solid ? `1px solid ${colors.accentGold}33` : '1px solid transparent',
       }}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo — refined text wordmark */}
+          {/* Logo */}
           <button
             onClick={() => scrollToSection('#')}
-            className="font-heading text-xl font-medium tracking-tight transition-opacity hover:opacity-60"
-            aria-label="Tayt's Cakes — home"
+            className="font-heading text-xl font-bold tracking-tight transition-opacity hover:opacity-80"
             style={{ color: linkColor }}
           >
             Tayt&apos;s Cakes
@@ -59,7 +59,7 @@ export function Navigation() {
               <button
                 key={link.label}
                 onClick={() => scrollToSection(link.href)}
-                className="nav-link font-body text-xs font-medium uppercase tracking-wider transition-opacity hover:opacity-60"
+                className="nav-link font-body text-xs font-medium uppercase tracking-wider transition-opacity hover:opacity-80"
                 style={{ color: linkColor }}
               >
                 {link.label}
@@ -67,13 +67,14 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* CTA Button — minimal outline */}
+          {/* CTA Button */}
           <button
             onClick={() => scrollToSection('#visit')}
-            className="hidden rounded-full px-5 py-2 font-body text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-300 hover:opacity-85 md:inline-block"
+            className="hidden rounded-full px-5 py-2 font-body text-xs font-bold uppercase tracking-wider transition-all hover:scale-105 md:inline-block"
             style={{
-              border: `1px solid ${solid ? colors.foreground : colors.background}`,
-              color: linkColor,
+              backgroundColor: solid ? colors.accentGold : `${colors.backgroundCard}1f`,
+              color: solid ? colors.background : colors.backgroundCard,
+              border: solid ? 'none' : `1px solid ${colors.backgroundCard}66`,
             }}
           >
             Order
@@ -92,7 +93,7 @@ export function Navigation() {
 
         {/* Mobile Nav */}
         {isOpen && (
-          <div className="mt-4 space-y-3 pt-4 md:hidden" style={{ borderTop: `1px solid ${colors.backgroundTaupe}30` }}>
+          <div className="mt-4 space-y-3 pt-4 md:hidden" style={{ borderTop: `1px solid ${colors.accentGold}33` }}>
             {navLinks.map((link) => (
               <button
                 key={link.label}
@@ -105,8 +106,8 @@ export function Navigation() {
             ))}
             <button
               onClick={() => scrollToSection('#visit')}
-              className="mt-3 w-full rounded-full px-4 py-2.5 font-body text-xs font-semibold uppercase tracking-[0.15em]"
-              style={{ border: `1px solid ${colors.foreground}`, color: colors.foreground }}
+              className="mt-3 w-full rounded-full px-4 py-2.5 font-body text-xs font-bold uppercase tracking-wider"
+              style={{ backgroundColor: colors.accentGold, color: colors.background }}
             >
               Order
             </button>

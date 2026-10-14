@@ -1,11 +1,10 @@
-// Palette for Tayt's Cakes — refined, editorial, anti-generic.
-// Off-white base with blush tints, taupe mid-tones, and charcoal for depth.
+// Warm, inviting palette for Tayt's Cakes — evokes freshly baked goods.
 export const colors = {
-  background: '#FBFAFA',      // off-white — main page background
-  backgroundCard: '#FBF3F3',  // blush — card/section accents
-  backgroundTaupe: '#BFB3AF', // taupe — feature bands, dividers
-  foreground: '#1E1E1E',      // charcoal — primary text
-  accentGold: '#1E1E1E',      // charcoal — primary accent (buttons, links)
-  accentGoldDark: '#3A3A3A',  // lighter charcoal — hover states
-  accentRose: '#E8C5C5',      // soft blush rose — subtle highlights
+  background: '#FFFBF7',      // warm cream — main page background
+  backgroundCard: '#FDF0E8',  // soft peach — card/section accents
+  backgroundTaupe: '#C77B5C', // terracotta — feature bands, CTA buttons
+  foreground: '#3D2B1F',      // dark espresso — primary text
+  accentGold: '#C77B5C',      // terracotta — primary accent (buttons, links)
+  accentGoldDark: '#A86248',  // darker terracotta — hover states
+  accentRose: '#E8B4A0',      // soft rose — subtle highlights
 }

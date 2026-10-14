@@ -15,56 +15,49 @@ export function Gallery() {
   ]
 
   return (
-    <section className="w-full py-20 sm:py-32" style={{ backgroundColor: colors.backgroundCard }}>
+    <section className="w-full py-16 sm:py-24" style={{ backgroundColor: colors.background }}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header — left-aligned, editorial */}
-        <div className="mb-14 flex items-end justify-between">
-          <div>
-            <p className="eyebrow mb-4" style={{ color: 'rgba(30,30,30,0.5)' }}>
-              The Work
-            </p>
-            <h2 className="font-heading text-3xl sm:text-4xl font-normal" style={{ color: colors.foreground }}>
-              Made <span className="italic font-light">to order.</span>
+        {/* Header */}
+        <div className="mb-16 text-center">
+          <p className="font-body text-xs font-bold uppercase tracking-widest mb-3" style={{ color: colors.accentGold }}>
+            The Work
+          </p>
+          <div className="flex items-center justify-center gap-4 mb-2">
+            <div className="h-px w-12" style={{ backgroundColor: colors.accentGold }} />
+            <h2 className="font-heading text-4xl sm:text-5xl font-bold" style={{ color: colors.foreground }}>
+              Made <span className="italic font-light">to Order</span>
             </h2>
+            <div className="h-px w-12" style={{ backgroundColor: colors.accentGold }} />
           </div>
-          <a
-            href="https://www.facebook.com/profile.php?id=61573446252959"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden items-center gap-2 font-body text-xs font-medium uppercase tracking-wider transition-all hover:gap-3 sm:inline-flex"
-            style={{ color: colors.foreground }}
-          >
-            Follow on Facebook <ArrowRightIcon size={14} />
-          </a>
         </div>
 
-        {/* Gallery Grid — clean, minimal gaps */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 mb-12">
           {images.map((image, i) => (
             <div
               key={i}
-              className="gallery-item group relative aspect-square w-full overflow-hidden rounded-lg"
-              style={{ backgroundColor: colors.backgroundTaupe }}
+              className="group relative aspect-square w-full overflow-hidden rounded-2xl sm:rounded-3xl transition-all hover:shadow-xl"
+              style={{ backgroundColor: colors.backgroundCard }}
             >
               <img
                 src={image.src}
                 alt={image.alt}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
             </div>
           ))}
         </div>
 
-        {/* Mobile Facebook Link */}
-        <div className="mt-10 text-center sm:hidden">
+        {/* Facebook Link */}
+        <div className="text-center">
           <a
-            href="https://www.facebook.com/profile.php?id=61573446252959"
+            href="https://www.facebook.com/TaytsCakes"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-body text-xs font-medium uppercase tracking-wider"
-            style={{ color: colors.foreground }}
+            className="inline-flex items-center gap-2 font-body text-sm font-medium transition-all hover:gap-3"
+            style={{ color: colors.accentGold }}
           >
-            Follow on Facebook <ArrowRightIcon size={14} />
+            Follow Tayt&apos;s Cakes on Facebook <ArrowRightIcon size={16} />
           </a>
         </div>
       </div>
